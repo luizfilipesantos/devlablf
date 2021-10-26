@@ -1,0 +1,80 @@
+{
+	"name": "sqldbdevlablf_metas_csv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_devlabls",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sa_sqldb_devlablf"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "loja",
+				"type": "varchar"
+			},
+			{
+				"name": "competencia",
+				"type": "varchar"
+			},
+			{
+				"name": "meta",
+				"type": "varchar"
+			},
+			{
+				"name": "data_ini",
+				"type": "varchar"
+			},
+			{
+				"name": "data_fim",
+				"type": "varchar"
+			},
+			{
+				"name": "d01",
+				"type": "varchar"
+			},
+			{
+				"name": "d02",
+				"type": "varchar"
+			},
+			{
+				"name": "d03",
+				"type": "varchar"
+			},
+			{
+				"name": "d04",
+				"type": "varchar"
+			},
+			{
+				"name": "d05",
+				"type": "varchar"
+			},
+			{
+				"name": "d06",
+				"type": "varchar"
+			},
+			{
+				"name": "d07",
+				"type": "varchar"
+			},
+			{
+				"name": "d08",
+				"type": "varchar"
+			},
+			{
+				"name": "d09",
+				"type": "varchar"
+			},
+			{
+				"name": "d10",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "stg_metas_csv"
+		}
+	}
+}
