@@ -1,0 +1,10 @@
+{
+	"name": "ls_akv_devlabls",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kvdevlabfs.vault.azure.net/"
+		}
+	}
+}
