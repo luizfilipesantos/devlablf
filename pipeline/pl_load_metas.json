@@ -1,0 +1,240 @@
+{
+	"name": "pl_load_metas",
+	"properties": {
+		"activities": [
+			{
+				"name": "copy_metas",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Loja",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "loja",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Compet�ncia",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "competencia",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Meta",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "meta",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Inicial",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "data_ini",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "Data Final",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "data_fim",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "01/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d01",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "04/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d02",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "08/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d03",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "10/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d04",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "12/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d05",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "14/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d06",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "16/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d07",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "20/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d08",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "24/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d09",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "30/06/2021",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "d10",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_csv_metas",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "sqldbdevlablf_metas_csv",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
