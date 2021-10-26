@@ -5,6 +5,9 @@
 			"referenceName": "ls_sa_devlab_lf",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "sa_devlab_lf/sparkfs"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
