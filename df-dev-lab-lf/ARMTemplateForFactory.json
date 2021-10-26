@@ -10,25 +10,20 @@
 		"ls_sa_devlab_lf_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'ls_sa_devlab_lf'"
+		},
+		"ls_sqldb_devlabls_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sqldb_devlabls'"
+		},
+		"ls_akv_devlabls_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://kvdevlabfs.vault.azure.net/"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/ls_sa_devlab_lf')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('ls_sa_devlab_lf_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/ds_csv_metas')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
@@ -119,6 +114,140 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/ls_sa_devlab_lf')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_akv_devlabls')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('ls_akv_devlabls_properties_typeProperties_baseUrl')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_sa_devlab_lf')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('ls_sa_devlab_lf_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ls_sqldb_devlabls')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"connectionString": "[parameters('ls_sqldb_devlabls_connectionString')]",
+					"password": {
+						"type": "AzureKeyVaultSecret",
+						"store": {
+							"referenceName": "ls_akv_devlabls",
+							"type": "LinkedServiceReference"
+						},
+						"secretName": "secsqldb01"
+					}
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_akv_devlabls')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/sqldbdevlablf_metas_csv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_sqldb_devlabls",
+					"type": "LinkedServiceReference"
+				},
+				"folder": {
+					"name": "sa_sqldb_devlablf"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [
+					{
+						"name": "loja",
+						"type": "varchar"
+					},
+					{
+						"name": "competencia",
+						"type": "varchar"
+					},
+					{
+						"name": "meta",
+						"type": "varchar"
+					},
+					{
+						"name": "data_ini",
+						"type": "varchar"
+					},
+					{
+						"name": "data_fim",
+						"type": "varchar"
+					},
+					{
+						"name": "d01",
+						"type": "varchar"
+					},
+					{
+						"name": "d02",
+						"type": "varchar"
+					},
+					{
+						"name": "d03",
+						"type": "varchar"
+					},
+					{
+						"name": "d04",
+						"type": "varchar"
+					},
+					{
+						"name": "d05",
+						"type": "varchar"
+					},
+					{
+						"name": "d06",
+						"type": "varchar"
+					},
+					{
+						"name": "d07",
+						"type": "varchar"
+					},
+					{
+						"name": "d08",
+						"type": "varchar"
+					},
+					{
+						"name": "d09",
+						"type": "varchar"
+					},
+					{
+						"name": "d10",
+						"type": "varchar"
+					}
+				],
+				"typeProperties": {
+					"schema": "dbo",
+					"table": "stg_metas_csv"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_sqldb_devlabls')]"
 			]
 		}
 	]

@@ -7,6 +7,12 @@
 		},
 		"ls_sa_devlab_lf_connectionString": {
 			"value": ""
+		},
+		"ls_sqldb_devlabls_connectionString": {
+			"value": ""
+		},
+		"ls_akv_devlabls_properties_typeProperties_baseUrl": {
+			"value": "https://kvdevlabfs.vault.azure.net/"
 		}
 	}
 }
