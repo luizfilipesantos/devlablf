@@ -1,0 +1,26 @@
+{
+	"name": "ds_csv_metas",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sa_devlab_lf",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "METAS.CSV",
+				"container": "sparkfs"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			}
+		]
+	}
+}
