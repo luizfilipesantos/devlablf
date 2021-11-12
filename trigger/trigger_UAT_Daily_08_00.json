@@ -1,0 +1,17 @@
+{
+	"name": "trigger_UAT_Daily_08_00",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2021-11-13T08:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}
