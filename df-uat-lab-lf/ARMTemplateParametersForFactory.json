@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "df-uat-lab-lf"
+		},
+		"ls_sa_devlab_lf_connectionString": {
+			"value": ""
+		},
+		"ls_sqldb_devlabls_connectionString": {
+			"value": ""
+		},
+		"ls_akv_devlabls_properties_typeProperties_baseUrl": {
+			"value": "https://kvdevlabfs.vault.azure.net/"
+		}
+	}
+}
