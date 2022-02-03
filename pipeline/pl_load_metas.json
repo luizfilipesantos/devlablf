@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "copy_metasas",
+				"name": "copy_metas",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -241,7 +241,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "copy_metasas",
+						"activity": "copy_metas",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -269,6 +269,8 @@
 				}
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2021-10-27T11:56:39Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
