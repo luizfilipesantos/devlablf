@@ -1,0 +1,29 @@
+{
+	"name": "ds_sqldb_stg_tb_tst",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sqldb_lab_dev",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "sqldb/sqldb-lab"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "cd_tb_tst",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ds_tb_tst",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "stg_tb_tst"
+		}
+	}
+}
