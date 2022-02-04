@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "copy_metas_teste",
+				"name": "copy_metas_teste2",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -241,7 +241,7 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "copy_metas_teste",
+						"activity": "copy_metas_teste2",
 						"dependencyConditions": [
 							"Succeeded"
 						]
