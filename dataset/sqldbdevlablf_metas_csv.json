@@ -1,10 +1,6 @@
 {
 	"name": "sqldbdevlablf_metas_csv",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "ls_sqldb_devlabls",
-			"type": "LinkedServiceReference"
-		},
 		"folder": {
 			"name": "sa_sqldb_devlablf"
 		},
