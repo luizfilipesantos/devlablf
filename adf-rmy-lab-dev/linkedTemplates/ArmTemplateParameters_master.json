@@ -10,6 +10,12 @@
 		},
 		"ls_sql_lab_properties_typeProperties_connectionString_secretName": {
 			"value": "akv-rmy-lab-sqldb-conn"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
 		}
 	}
 }
