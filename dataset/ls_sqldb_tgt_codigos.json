@@ -1,0 +1,26 @@
+{
+	"name": "ls_sqldb_tgt_codigos",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_sql_lab",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "codigo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "mensagem",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "tgt_codigos"
+		}
+	}
+}
