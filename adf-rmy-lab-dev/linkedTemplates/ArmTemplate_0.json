@@ -34,6 +34,16 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ir-rmy-lab')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ls_sql_lab')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -49,9 +59,14 @@
 						},
 						"secretName": "[parameters('ls_sql_lab_properties_typeProperties_connectionString_secretName')]"
 					}
+				},
+				"connectVia": {
+					"referenceName": "ir-rmy-lab",
+					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/ir-rmy-lab')]",
 				"[concat(variables('factoryId'), '/linkedServices/akv_rmy_lab')]"
 			]
 		},
