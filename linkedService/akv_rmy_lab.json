@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
-			"baseUrl": "https://akv-rmy-lab-sec.vault.azure.net/"
+			"baseUrl": "https://akv-rmy-lab-sec-uat.vault.azure.net/"
 		}
 	}
 }
