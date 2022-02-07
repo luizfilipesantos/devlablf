@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-rmy-lab-uat"
+		},
+		"akv_rmy_lab_properties_typeProperties_baseUrl": {
+			"value": "https://akv-rmy-lab-sec-uat.vault.azure.net/"
+		},
+		"ls_sql_lab_properties_typeProperties_connectionString_secretName": {
+			"value": "akv-rmy-lab-sqldb-conn"
+		},
+		"ir-rmy-lab_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/5982051f-c43a-4684-8691-4fc3a69eb7a7/resourcegroups/rg-rmy-lab-dev/providers/Microsoft.DataFactory/factories/adf-rmy-lab-dev/integrationruntimes/ir-rmy-lab"
+		}
+	}
+}
