@@ -1,0 +1,10 @@
+{
+	"name": "akv_rmy_lab",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://akv-rmy-lab-sec.vault.azure.net/"
+		}
+	}
+}
