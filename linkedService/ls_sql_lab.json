@@ -1,0 +1,17 @@
+{
+	"name": "ls_sql_lab",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "akv_rmy_lab",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "akv-rmy-lab-sqldb-conn"
+			}
+		}
+	}
+}
