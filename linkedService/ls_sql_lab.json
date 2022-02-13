@@ -12,10 +12,6 @@
 				},
 				"secretName": "akv-rmy-lab-sqldb-conn"
 			}
-		},
-		"connectVia": {
-			"referenceName": "ir-rmy-lab",
-			"type": "IntegrationRuntimeReference"
 		}
 	}
 }
