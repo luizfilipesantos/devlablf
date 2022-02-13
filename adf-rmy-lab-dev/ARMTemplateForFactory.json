@@ -203,14 +203,9 @@
 						},
 						"secretName": "[parameters('ls_sql_lab_properties_typeProperties_connectionString_secretName')]"
 					}
-				},
-				"connectVia": {
-					"referenceName": "ir-rmy-lab",
-					"type": "IntegrationRuntimeReference"
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/ir-rmy-lab')]",
 				"[concat(variables('factoryId'), '/linkedServices/akv_rmy_lab')]"
 			]
 		},
